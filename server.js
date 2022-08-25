@@ -17,9 +17,10 @@ app.use(bodyParser.json());
 
 dotenv.config();
 
-const Database = process.env.DATABASE || "mongodb://localhost:27017/Netflix"
+const Database = process.env.DATABASE 
+// || "mongodb://localhost:27017/Netflix"
 
-const port = process.env.PORT || 3000
+const PORT = process.env.PORT || 3000
 /**
  * * Connect to the database
  */
@@ -56,7 +57,7 @@ app.use('/', (req, res) => {
  * * connect to the server
  */
 
-app.listen(port, () => {
+app.listen(PORT, () => {
     console.log('Server started on port 3000');
 });
 
