@@ -3,6 +3,9 @@ const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+var cors = require('cors')
+
+
 
 /**
  * ! Routes of the application
@@ -14,10 +17,11 @@ const listRoute = require("./api/routes/list");
 
 
 app.use(bodyParser.json());
+app.use(cors())
 
 dotenv.config();
 
-const Database = process.env.DATABASE 
+const DATABASE = process.env.DATABASE 
 // || "mongodb://localhost:27017/Netflix"
 
 const PORT = process.env.PORT || 3000
@@ -25,7 +29,7 @@ const PORT = process.env.PORT || 3000
  * * Connect to the database
  */
 mongoose.connect(
-    Database,
+    DATABASE,
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
