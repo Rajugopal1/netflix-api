@@ -32,7 +32,7 @@ const uploadDocController = async (req, res, next) => {
 
   console.log(paths);
 
-  var name = paths[0].split("\\")[1];
+  var name = paths[0].split("/")[1];
 
   console.log(name);
 
